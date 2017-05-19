@@ -40,7 +40,7 @@ app.get('/*', (req, res) => {
 
 app.listen(PORT, 'localhost', (err) => {
   if (err) {
-    console.log(err);
+    // console.log(err);
   }
-  console.log(`Listening at http://localhost:${PORT}`);
+  // console.log(`Listening at http://localhost:${PORT}`);
 });

@@ -29,6 +29,7 @@ const config = {
           loaders: {
             js: 'babel-loader?presets[]=es2015,presets[]=stage-2',
           },
+          // other vue-loader options go here
         },
       },
       {
@@ -80,13 +81,12 @@ const config = {
   performance: {
     hints: false,
   },
-  devtool: '#eval-source-map',
+  devtool: 'source-map',
 };
 
 module.exports = config;
 
 if (process.env.NODE_ENV === 'production') {
-  // module.exports.devtool = '#source-map';
   // http://vue-loader.vuejs.org/en/workflow/production.html
   module.exports.plugins = (module.exports.plugins || []).concat([
     new webpack.DefinePlugin({
@@ -104,6 +104,4 @@ if (process.env.NODE_ENV === 'production') {
       minimize: true,
     }),
   ]);
-} else {
-  module.exports.devtool = '#source-map';
 }
